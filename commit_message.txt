@@ -1,0 +1,13 @@
+refactor: Improve HTML structure and externalize CSS
+
+This commit refactors the Spotify clone's frontend for better maintainability and web best practices:
+
+- **`Spotify_clone.html`:**
+    - Moved all inline CSS to a new external `style.css` file.
+    - Added essential `meta` tags for character set, viewport, and description.
+    - Refactored HTML to use more semantic tags (`<aside>`, `<main>`, `<section>`).
+    - Ensured all `<img>` tags have descriptive `alt` attributes.
+    - Consolidated redundant CSS classes (e.g., `box_1` to `box`, `bb_1` to `card`, `biz_box1` to `biz-card`).
+- **`style.css` (New File):**
+    - Contains all the CSS previously embedded in the HTML.
+    - Updated CSS rules to reflect the consolidated class names.
