@@ -1,0 +1,18 @@
+# General ignores
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.vscode/
+.idea/
+
+# Build artifacts (if any were to be generated)
+/dist
+/build
+
+# Node.js (if JavaScript dependencies were to be added later)
+/node_modules
+
+# Temporary files
+*.log
+*.tmp
