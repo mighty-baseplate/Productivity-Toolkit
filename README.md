@@ -279,6 +279,13 @@ We welcome contributions! Please follow these steps:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 👥 Authors
+
+This project was created by:
+
+- **[Atharva Jain](https://github.com/mighty-baseplate)** - Full-stack development, UI/UX design, and architecture
+- **[Anahita Bhalme](https://github.com/anahita-jpeg)** - Frontend development, animations, and design systems
+
 ## 🙏 Acknowledgments
 
 - **Design Inspiration**: Momentum Dash and glassmorphism design trends
@@ -294,6 +301,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ and ☕ for productivity enthusiasts worldwide**
+**Built with ❤️ and ☕ by [Atharva Jain](https://github.com/mighty-baseplate) & [Anahita Bhalme](https://github.com/anahita-jpeg) for productivity enthusiasts worldwide**
 
 *Ready to supercharge your productivity? Star ⭐ this repo and start building better habits today!*

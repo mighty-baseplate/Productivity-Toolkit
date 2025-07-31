@@ -1,7 +1,19 @@
 {
   "name": "productivity-toolkit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "authors": [
+    {
+      "name": "Atharva Jain",
+      "email": "contact@atharvajain.dev",
+      "url": "https://github.com/mighty-baseplate"
+    },
+    {
+      "name": "Anahita Bhalme", 
+      "email": "anahitabhalme@gmail.com",
+      "url": "https://github.com/anahita-jpeg"
+    }
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

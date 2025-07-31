@@ -12,6 +12,7 @@ import {
   Edit3
 } from 'lucide-react'
 import { ActiveSection } from '@/components/Dashboard'
+import Credits from '@/components/ui/Credits'
 
 interface SidebarProps {
   activeSection: ActiveSection
@@ -181,7 +182,7 @@ export default function Sidebar({
         {/* Bottom section */}
         {!collapsed && (
           <motion.div 
-            className="absolute bottom-6 left-6 right-6"
+            className="absolute bottom-6 left-6 right-6 space-y-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -200,6 +201,8 @@ export default function Sidebar({
                 </div>
               </div>
             </div>
+            
+            <Credits />
           </motion.div>
         )}
       </div>
