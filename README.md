@@ -4,7 +4,7 @@ A stunning, modern productivity dashboard built with Next.js 14, featuring glass
 
 Check out the live demo here: [https://productivitytoolkit.netlify.app/](https://productivitytoolkit.netlify.app/)
 
-![Productivity Toolkit](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+![Productivity Toolkit Screenshot](./assets/images/photo.png)
 
 
 ## ✨ Features
