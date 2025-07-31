@@ -97,7 +97,7 @@ Check out the live demo here: [https://productivitytoolkit.netlify.app/](https:/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/productivity-toolkit.git
+   git clone https://github.com/mighty-baseplate/Productivity-Toolkit.git
    cd productivity-toolkit
    ```
 
