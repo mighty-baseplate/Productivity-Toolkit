@@ -8,7 +8,7 @@ Check out the live demo here: [https://productivitytoolkit.netlify.app/](https:/
 
 ## Live Showcase
 
-<video src="./assets/video/video.mp4" controls muted loop playsinline style="width: 100%; max-width: 800px; margin: 0 auto; display: block;"></video>
+[Productivity Toolkit](https://youtu.be/eF3qPydAKrs)
 
 
 ## ✨ Features
