@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, HTMLMotionProps } from 'framer-motion'
 import { useApp, Task } from '@/components/providers/AppProvider'
 import { 
   CheckSquare, 
@@ -237,9 +237,14 @@ export default function TaskManager() {
       >
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-white font-medium flex items-center space-x-2">
-            {categories.find(c => c.id === activeCategory)?.icon && (
-              <categories.find(c => c.id === activeCategory)!.icon className={`w-4 h-4 ${categories.find(c => c.id === activeCategory)!.color}`} />
-            )}
+            {(() => {
+              const activeItem = categories.find(c => c.id === activeCategory);
+              if (activeItem?.icon) {
+                const Icon = activeItem.icon;
+                return <Icon className={`w-4 h-4 ${activeItem.color}`} />;
+              }
+              return null;
+            })()}
             <span>{categories.find(c => c.id === activeCategory)?.label} Tasks</span>
           </h3>
           <span className="text-white/60 text-sm">{filteredTasks.length} tasks</span>
