@@ -6,6 +6,10 @@ Check out the live demo here: [https://productivitytoolkit.netlify.app/](https:/
 
 ![Productivity Toolkit Screenshot](./assets/images/photo.png)
 
+## Live Showcase
+
+<video src="./assets/video/video.mp4" controls muted loop playsinline style="width: 100%; max-width: 800px; margin: 0 auto; display: block;"></video>
+
 
 ## ✨ Features
 
