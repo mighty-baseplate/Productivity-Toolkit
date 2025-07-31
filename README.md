@@ -1,14 +1,8 @@
-#  Productivity Toolkit
-
-
+# Productivity Toolkit
 
 A stunning, modern productivity dashboard built with Next.js 14, featuring a glassmorphism design, smooth animations, and a comprehensive suite of productivity tools. Inspired by Momentum Dash, this toolkit is designed to elevate your daily workflow with beautiful aesthetics and powerful features.
 
-<p align="center">
-  <a href="https://productivitytoolkit.netlify.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Live_Demo-Visit_Now-brightgreen?style=for-the-badge" alt="Live Demo">
-  </a>
-</p>
+Check out the live demo here: [https://productivitytoolkit.netlify.app/](https://productivitytoolkit.netlify.app/)
 
 <p align="center">
   <img src="https://img.shields.io/github/license/mighty-baseplate/productivity-toolkit?style=for-the-badge" alt="License">
@@ -17,12 +11,21 @@ A stunning, modern productivity dashboard built with Next.js 14, featuring a gla
   <img src="https://img.shields.io/badge/Tailwind_CSS-3-cyan?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS">
 </p>
 
----
+## Table of Contents
 
-### 🎥 Video Showcase
+- [🎥 Video Showcase](#-video-showcase)
+- [✨ Features](#-features)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [🚀 Quick Start](#-quick-start)
+- [📁 Project Structure](#-project-structure)
+- [🎨 Customization](#-customization)
+- [🤝 Contributing](#-contributing)
+- [⭐ Show Your Support](#-show-your-support)
+- [📝 License](#-license)
+- [👥 Authors](#-authors)
+
+## 🎥 Video Showcase
 [Watch the Video Showcase](./assets/video/video.mp4)
-
----
 
 ## ✨ Features
 
