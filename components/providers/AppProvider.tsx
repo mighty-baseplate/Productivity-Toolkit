@@ -67,7 +67,8 @@ const initialState: AppState = {
     isPaused: false,
     timeLeft: 25 * 60, // 25 minutes in seconds
     isBreak: false,
-    type: 'pomodoro'
+    type: 'pomodoro',
+    customColor: 'teal'
   },
   bmi: {
     height: 0,
@@ -79,9 +80,11 @@ const initialState: AppState = {
     volume: 0.7,
     playlist: 'lofi'
   },
+  notes: '',
   quote: 'The way to get started is to quit talking and begin doing.',
   greeting: 'Good morning',
-  backgroundImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'
+  backgroundImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
+  backgroundTheme: 'gradient'
 }
 
 // Reducer
@@ -167,6 +170,15 @@ function appReducer(state: AppState, action: AppAction): AppState {
         }
       }
     
+    case 'SET_TIMER_COLOR':
+      return {
+        ...state,
+        currentTimer: {
+          ...state.currentTimer,
+          customColor: action.payload
+        }
+      }
+    
     case 'UPDATE_BMI':
       const { height, weight } = action.payload
       const bmiValue = weight / ((height / 100) ** 2)
@@ -190,6 +202,18 @@ function appReducer(state: AppState, action: AppAction): AppState {
       return {
         ...state,
         music: { ...state.music, ...action.payload }
+      }
+    
+    case 'SET_NOTES':
+      return {
+        ...state,
+        notes: action.payload
+      }
+    
+    case 'SET_BACKGROUND_THEME':
+      return {
+        ...state,
+        backgroundTheme: action.payload
       }
     
     case 'LOAD_FROM_STORAGE':
@@ -229,10 +253,15 @@ export function AppProvider({ children }: { children: ReactNode }) {
       dailyFocus: state.dailyFocus,
       tasks: state.tasks,
       bmi: state.bmi,
-      music: state.music
+      music: state.music,
+      notes: state.notes,
+      backgroundTheme: state.backgroundTheme,
+      currentTimer: {
+        customColor: state.currentTimer.customColor
+      }
     }
     localStorage.setItem('productivity-toolkit-state', JSON.stringify(stateToSave))
-  }, [state.dailyFocus, state.tasks, state.bmi, state.music])
+  }, [state.dailyFocus, state.tasks, state.bmi, state.music, state.notes, state.backgroundTheme, state.currentTimer.customColor])
 
   // Update greeting based on time
   useEffect(() => {

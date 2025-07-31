@@ -8,7 +8,8 @@ import {
   Heart, 
   Music, 
   ChevronLeft, 
-  ChevronRight 
+  ChevronRight,
+  Edit3
 } from 'lucide-react'
 import { ActiveSection } from '@/components/Dashboard'
 
@@ -26,6 +27,7 @@ const navItems = [
   { id: 'timer' as ActiveSection, label: 'Timer', icon: Timer, color: 'text-orange-400' },
   { id: 'wellness' as ActiveSection, label: 'Wellness', icon: Heart, color: 'text-red-400' },
   { id: 'music' as ActiveSection, label: 'Music', icon: Music, color: 'text-purple-400' },
+  { id: 'notes' as ActiveSection, label: 'My Notes', icon: Edit3, color: 'text-indigo-400' },
 ]
 
 export default function Sidebar({ 

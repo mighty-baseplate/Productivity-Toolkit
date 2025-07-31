@@ -11,14 +11,24 @@ import {
   Settings,
   Coffee,
   Zap,
-  X
+  X,
+  Palette
 } from 'lucide-react'
+
+const timerColors = [
+  { id: 'teal', name: 'Teal', color: 'linear-gradient(135deg, #0f766e 0%, #059669 100%)', textColor: 'text-teal-200' },
+  { id: 'amber', name: 'Amber', color: 'linear-gradient(135deg, #d97706 0%, #f59e0b 100%)', textColor: 'text-amber-200' },
+  { id: 'lavender', name: 'Lavender', color: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)', textColor: 'text-purple-200' },
+  { id: 'steel', name: 'Steel Blue', color: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)', textColor: 'text-blue-200' },
+  { id: 'rose', name: 'Rose', color: 'linear-gradient(135deg, #e11d48 0%, #f43f5e 100%)', textColor: 'text-rose-200' },
+]
 
 export default function PomodoroTimer() {
   const { state, dispatch } = useApp()
   const [customDuration, setCustomDuration] = useState(30)
   const [showFullscreen, setShowFullscreen] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
+  const [showColorPicker, setShowColorPicker] = useState(false)
 
   // Timer effect
   useEffect(() => {
@@ -81,6 +91,13 @@ export default function PomodoroTimer() {
     ? (1 - state.currentTimer.timeLeft / (25 * 60)) * 100
     : (1 - state.currentTimer.timeLeft / (customDuration * 60)) * 100
 
+  const currentColor = timerColors.find(c => c.id === state.currentTimer.customColor) || timerColors[0]
+
+  const handleColorChange = (colorId: string) => {
+    dispatch({ type: 'SET_TIMER_COLOR', payload: colorId })
+    setShowColorPicker(false)
+  }
+
   return (
     <>
       <motion.div
@@ -112,15 +129,64 @@ export default function PomodoroTimer() {
           transition={{ delay: 0.2 }}
         >
           <div className="relative mb-8">
+            {/* Color Picker */}
+            <div className="absolute top-0 right-0">
+              <motion.button
+                onClick={() => setShowColorPicker(!showColorPicker)}
+                className="glass-button p-2 text-white hover:bg-white/20"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                title="Timer color"
+              >
+                <Palette className="w-4 h-4" />
+              </motion.button>
+
+              <AnimatePresence>
+                {showColorPicker && (
+                  <motion.div
+                    className="absolute top-full right-0 mt-2 z-10"
+                    initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                  >
+                    <div className="glass-card p-3 w-48">
+                      <h4 className="text-white text-sm font-medium mb-3">Timer Color</h4>
+                      <div className="grid grid-cols-2 gap-2">
+                        {timerColors.map((color) => (
+                          <motion.button
+                            key={color.id}
+                            onClick={() => handleColorChange(color.id)}
+                            className={`p-2 rounded-lg text-left transition-all duration-200 ${
+                              state.currentTimer.customColor === color.id
+                                ? 'ring-2 ring-white/30'
+                                : 'hover:bg-white/10'
+                            }`}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                          >
+                            <div
+                              className="w-full h-6 rounded mb-1"
+                              style={{ background: color.color }}
+                            />
+                            <div className="text-white text-xs">{color.name}</div>
+                          </motion.button>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             {/* Circular Progress */}
-            <div className="relative w-48 h-48 mx-auto">
+            <div className="relative w-64 h-64 mx-auto">
               <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                 <circle
                   cx="50"
                   cy="50"
                   r="45"
                   stroke="rgba(255, 255, 255, 0.1)"
-                  strokeWidth="4"
+                  strokeWidth="3"
                   fill="none"
                 />
                 <motion.circle
@@ -128,7 +194,7 @@ export default function PomodoroTimer() {
                   cy="50"
                   r="45"
                   stroke={state.currentTimer.isBreak ? "#10b981" : "#f59e0b"}
-                  strokeWidth="4"
+                  strokeWidth="3"
                   fill="none"
                   strokeLinecap="round"
                   strokeDasharray={`${2 * Math.PI * 45}`}
@@ -142,10 +208,10 @@ export default function PomodoroTimer() {
               {/* Time Display */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-white mb-2 font-mono">
+                  <div className="text-5xl font-bold text-white mb-3 font-mono tracking-wider">
                     {formatTime(state.currentTimer.timeLeft)}
                   </div>
-                  <div className="text-white/60 text-sm">
+                  <div className="text-white/70 text-lg font-medium">
                     {state.currentTimer.isBreak ? 'Break Time' : 'Focus Time'}
                   </div>
                 </div>
@@ -369,7 +435,7 @@ export default function PomodoroTimer() {
             style={{
               background: state.currentTimer.isBreak 
                 ? 'linear-gradient(135deg, #0f766e 0%, #059669 100%)'
-                : 'linear-gradient(135deg, #dc2626 0%, #ea580c 100%)'
+                : currentColor.color
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -398,13 +464,48 @@ export default function PomodoroTimer() {
                   <Zap className="w-24 h-24 mx-auto mb-4 text-white/80" />
                 )}
                 
-                <h1 className="text-6xl md:text-8xl font-bold mb-4 font-mono">
+                <h1 className="text-8xl md:text-9xl font-bold mb-6 font-mono tracking-wider">
                   {formatTime(state.currentTimer.timeLeft)}
                 </h1>
                 
-                <p className="text-2xl md:text-3xl text-white/80 mb-8">
+                <p className="text-3xl md:text-4xl text-white/90 mb-12 font-medium">
                   {state.currentTimer.isBreak ? 'Take a break' : 'Stay focused'}
                 </p>
+
+                {/* Large Progress Ring */}
+                <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-12">
+                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      stroke="rgba(255, 255, 255, 0.2)"
+                      strokeWidth="4"
+                      fill="none"
+                    />
+                    <motion.circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      stroke="rgba(255, 255, 255, 0.8)"
+                      strokeWidth="4"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeDasharray={`${2 * Math.PI * 45}`}
+                      strokeDashoffset={`${2 * Math.PI * 45 * (1 - progress / 100)}`}
+                      initial={{ strokeDashoffset: 2 * Math.PI * 45 }}
+                      animate={{ strokeDashoffset: 2 * Math.PI * 45 * (1 - progress / 100) }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  </svg>
+                  
+                  {/* Progress Percentage */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-white/80 text-lg font-semibold">
+                      {Math.round(progress)}%
+                    </span>
+                  </div>
+                </div>
               </motion.div>
 
               <div className="flex justify-center space-x-6">
