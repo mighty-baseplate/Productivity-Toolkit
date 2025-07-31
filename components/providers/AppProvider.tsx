@@ -21,6 +21,7 @@ export interface AppState {
     timeLeft: number
     isBreak: boolean
     type: 'pomodoro' | 'custom'
+    customColor: string
   }
   bmi: {
     height: number
@@ -34,9 +35,11 @@ export interface AppState {
     volume: number
     playlist: 'lofi' | 'nature'
   }
+  notes: string
   quote: string
   greeting: string
   backgroundImage: string
+  backgroundTheme: 'light' | 'dark' | 'gradient'
 }
 
 type AppAction = 
@@ -48,8 +51,11 @@ type AppAction =
   | { type: 'PAUSE_TIMER' }
   | { type: 'RESET_TIMER' }
   | { type: 'TICK_TIMER' }
+  | { type: 'SET_TIMER_COLOR'; payload: string }
   | { type: 'UPDATE_BMI'; payload: { height: number; weight: number } }
   | { type: 'SET_MUSIC'; payload: Partial<AppState['music']> }
+  | { type: 'SET_NOTES'; payload: string }
+  | { type: 'SET_BACKGROUND_THEME'; payload: 'light' | 'dark' | 'gradient' }
   | { type: 'LOAD_FROM_STORAGE'; payload: Partial<AppState> }
 
 // Default state
