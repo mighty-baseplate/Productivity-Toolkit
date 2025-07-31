@@ -1,3 +1,0 @@
-docs: Re-add .gitignore and LICENSE files
-
-Re-added .gitignore and LICENSE files as they are essential for proper Git repository management and open-source best practices.
