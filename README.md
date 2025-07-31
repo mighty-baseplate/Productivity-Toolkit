@@ -1,9 +1,21 @@
-# 🎯 Productivity Toolkit - Glassmorphic Dashboard
+#  Productivity Toolkit
+
+
 
 A stunning, modern productivity dashboard built with Next.js 14, featuring a glassmorphism design, smooth animations, and a comprehensive suite of productivity tools. Inspired by Momentum Dash, this toolkit is designed to elevate your daily workflow with beautiful aesthetics and powerful features.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mighty-baseplate/productivity-toolkit)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Now-brightgreen)](https://productivitytoolkit.netlify.app/)
+<p align="center">
+  <a href="https://productivitytoolkit.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-Visit_Now-brightgreen?style=for-the-badge" alt="Live Demo">
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/license/mighty-baseplate/productivity-toolkit?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js" alt="Next.js">
+  <img src="https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react" alt="React">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3-cyan?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS">
+</p>
 
 ---
 
@@ -12,8 +24,7 @@ A stunning, modern productivity dashboard built with Next.js 14, featuring a gla
 
 ---
 
-<details>
-<summary>✨ Features</summary>
+## ✨ Features
 
 ### 🎨 Design & Aesthetics
 - **Glassmorphism UI** - Beautiful glass-morphic cards with backdrop blur effects
@@ -35,10 +46,7 @@ A stunning, modern productivity dashboard built with Next.js 14, featuring a gla
 - **Animated Transitions** - Smooth page and component transitions.
 - **Floating Particles** - Subtle background animations.
 
-</details>
-
-<details>
-<summary>🛠️ Tech Stack</summary>
+## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14 with App Router
 - **Language**: TypeScript
@@ -49,8 +57,6 @@ A stunning, modern productivity dashboard built with Next.js 14, featuring a gla
 - **State Management**: React Context + useReducer
 - **Storage**: localStorage with automatic persistence
 - **Themes**: next-themes for dark/light mode switching
-
-</details>
 
 ## 🚀 Quick Start
 
@@ -74,8 +80,7 @@ A stunning, modern productivity dashboard built with Next.js 14, featuring a gla
    ```
 4. **Open your browser** to `http://localhost:3000`
 
-<details>
-<summary>📁 Project Structure</summary>
+## 📁 Project Structure
 
 ```
 productivity-toolkit/
@@ -94,10 +99,7 @@ productivity-toolkit/
 └── package.json                # Dependencies
 ```
 
-</details>
-
-<details>
-<summary>🎨 Customization</summary>
+## 🎨 Customization
 
 ### **Colors & Gradients**
 Edit `tailwind.config.js` to customize the color palette.
@@ -108,28 +110,22 @@ Update the background image in `components/providers/AppProvider.tsx`.
 ### **Glass Effects**
 Modify glass components in `app/globals.css`.
 
-</details>
-
-<details>
-<summary>🚀 Deployment</summary>
-
-### **Vercel (Recommended)**
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mighty-baseplate/productivity-toolkit)
-Deploy with one click!
-
-### **Netlify**
-1. Build the project: `npm run build`
-2. Deploy the `out` directory to Netlify.
-
-</details>
-
 ## 🤝 Contributing
-We welcome contributions! Please fork the repository and open a pull request.
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/mighty-baseplate/Productivity-Toolkit/issues).
+
+## ⭐ Show Your Support
+
+Give a ⭐️ if you like this project!
 
 ## 📝 License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Authors
+
 - **[Atharva Jain](https://github.com/mighty-baseplate)**
 - **[Anahita Bhalme](https://github.com/anahita-jpeg)**
 
