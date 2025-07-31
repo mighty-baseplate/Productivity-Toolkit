@@ -245,18 +245,6 @@ To add real audio playback:
 
 3. Update `MusicPlayer.tsx` with Howler integration
 
-## 🎯 Future Enhancements
-
-- [ ] **Real Audio Integration** - Howler.js implementation
-- [ ] **Backend Integration** - User accounts and cloud sync
-- [ ] **Calendar Integration** - Google Calendar API
-- [ ] **Habit Tracking** - Daily habit streaks
-- [ ] **Focus Mode** - Website blocker integration
-- [ ] **Export Features** - Task export to CSV/PDF
-- [ ] **Team Collaboration** - Shared workspaces
-- [ ] **Analytics Dashboard** - Productivity insights
-- [ ] **Mobile Apps** - React Native companion
-- [ ] **Plugin System** - Custom module support
 
 ## 🤝 Contributing
 
@@ -283,8 +271,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This project was created by:
 
-- **[Atharva Jain](https://github.com/mighty-baseplate)** - Full-stack development, UI/UX design, and architecture
-- **[Anahita Bhalme](https://github.com/anahita-jpeg)** - Frontend development, animations, and design systems
+- **[Atharva Jain](https://github.com/mighty-baseplate)**  
+- **[Anahita Bhalme](https://github.com/anahita-jpeg)** 
 
 ## 🙏 Acknowledgments
 
