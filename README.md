@@ -1,4 +1,4 @@
-# Productivity Toolkit - Glassmorphic Dashboard
+# Productivity Toolkit
 
 A stunning, modern productivity dashboard built with Next.js 14, featuring glassmorphism design, smooth animations, and comprehensive productivity tools. Inspired by Momentum Dash but elevated with beautiful glass-morphic aesthetics.
 
